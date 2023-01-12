@@ -1,0 +1,114 @@
+
+  :root{
+    --i3e_cyan: linear-gradient(#1abc9e 0 0);
+    --i3e_blue: linear-gradient(#386cb5 0 0);
+    --i3e_red: linear-gradient(#e74c3c 0 0);
+    --i3e_yellow: linear-gradient(#f1c40f 0 0);
+  }
+  .col-sm-2 {
+    padding: 10px;
+    border-radius: 4px;
+    height: 250px;
+    margin-bottom: 10px;
+  
+  }
+  #bars1 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    width: 50px;
+    margin: -25px 0 0 -25px;
+  }
+  
+  #bars1 span {
+    position: absolute;
+    display: block;
+    bottom: 10px;
+    width: 9px;
+    height: 30px;
+    background: var(--i3e_blue);
+    -webkit-animation: bars1 1.5s  infinite ease-in-out;
+            animation: bars1 1.5s  infinite ease-in-out;
+  }
+  
+  #bars1 span:nth-child(2) {
+    left: 11px;
+    background: var(--i3e_red);
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+  }
+  
+  #bars1 span:nth-child(3) {
+    left: 22px;
+    background: var(--i3e_yellow);
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+  }
+  
+  #bars1 span:nth-child(4) {
+    left: 33px;
+    background: var(--i3e_cyan);
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+  }
+
+  
+  @keyframes bars1 {
+    0% {
+      height: 15px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+   
+    }
+    25% {
+      height: 50px;
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+      
+    }
+    50% {
+      height: 15px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      
+    }
+    100% {
+      height: 15px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    
+    }
+  }
+  @-webkit-keyframes bars1 {
+    0% {
+      height: 15px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    }
+    25% {
+      height: 50px;
+      -webkit-transform: translateY(15px);
+              transform: translateY(15px);
+    }
+    50% {
+      height: 15px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+
+    }
+    100% {
+      height: 15px;
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+    }
+  }
