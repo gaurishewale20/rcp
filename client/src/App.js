@@ -4,7 +4,7 @@ import { createBrowserHistory } from  "history";
 
 import './App.css';
 import './utilities.css';
-import NavbarComponent from './components/Navbar/Navbar';
+import NavComponent from './components/Navbar/Navbar';
 import Loader from './components/Loader/Loader';
 import Footer from './components/Footer/Footer';
 
@@ -22,7 +22,7 @@ const App=()=> {
 
   return (
     <Router history={history}>
-    <NavbarComponent/>
+    <NavComponent/>
     <ScrollToBottom/>
     <ScrollToTop />
     <div className="App mt-5 pt-5">
