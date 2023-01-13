@@ -74,7 +74,7 @@ const Navbarr = () => {
             <Navbar.Collapse id='responsive-navbar-nav' className="justify-content-end navv2">
               <Nav className="flexcont">
                 <Nav.Link eventKey="1"><Link activeClassname="active" to='/' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )} >Home</Link></Nav.Link>
-                <Nav.Link eventKey="2"><Link activeClassName="active" to='/login' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Login</Link></Nav.Link>
+                <Nav.Link eventKey="2"><Link activeClassName="active" to='/' className="nav-link nvlink" onClick={logout}>Logout</Link></Nav.Link>
                 <Nav.Link eventKey="3"><Link activeClassName="active" to='/information' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Info</Link></Nav.Link>
                 <Nav.Link eventKey="4"><Link activeClassName="active" to='/request' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Request</Link></Nav.Link>
                 <Nav.Link eventKey="5"><Link activeClassName="active" to='/profile' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Profile</Link></Nav.Link>
