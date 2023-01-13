@@ -1,522 +1,70 @@
-.showcase .container {
-    position: relative;
-    z-index: 3;
-    margin-top: -20px;
-    min-height: 90vh;
+.words {
+    font-family: var(--font-family);
 }
 
+h3 {
+    font-weight: 500;
+    font-size: 2.2em;
+}
 
-/* 
-.showcase .grid {
-    overflow: visible;
-    gap: 20px;
-    border: #000 1px solid;
+h2 {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+a:hover{
+    border-bottom: 0.1em rgb(123, 63, 175) solid;
+    padding-bottom: 0.1em;
+}
+
+.future {
+    font-family: var(--font-family);
+    /* font-style: oblique; */
+}
+
+.caru {
+    padding: 0;
+    margin: 0;
+}
+
+.section1_info {
+    padding-left: 6em;}
+
+.contact_us_title {
+    border-bottom: 3px solid #e74c3c;
+}
+
+.mainn {
+    margin-top: -15px;
+    /* background-color: #fffdd0; */
+    min-height: 73vh;
+}
+
+#card-title {
+    font-weight: bold;
+}
+
+#contact_title {
+    font-weight: bold;
+}
+
+#card {
+    /* background-color: gray; */
+    /* background-color: #e9eef1; */
+    background-color: #f7fafc;
+    border-radius: 0.7rem;
+}
+
+#username {
+    background-color: #d4d9dd;
+}
+
+#unplash-img {
+    border-radius: 0.5rem;
+}
+/* @media(max-width: 1200px){
+#card {
+    font-weight: 100;
+    font-size: 3rem;
+}
 } */
-
-
-/* .showcase .showcase-text {
-    border: 1px red solid;
-}
-
-.showcase .showcase-img {
-    border: 1px red solid;
-} */
-
-.showcase h1 {
-    position: relative;
-    font-weight: 300;
-    line-height: 1.7em;
-    /* margin: 10px auto; */
-    font-size: 4em;
-    text-align: center;
-    /* padding: 10px auto; */
-    /* margin-left: 100px; */
-    /* text-align: left; */
-}
-
-.showcase img {
-    height: 100%;
-    width: 100%;
-}
-
-
-/* .showcase::before,
-.showcase::after {
-  content: "";
-  position: absolute;
-  height: 200px;
-  bottom: 198px;
-  right: 0;
-  left: 0;
-  background: #fff;
-  transform: skewY(-3deg);
-  -webkit-transform: skewY(-3deg);
-  -moz-transform: skewY(-3deg);
-  -ms-transform: skewY(-3deg);
-  z-index: 0;
-} */
-
-
-/* ABOUT */
-
-.about {
-    background: var(--secondary-bg-color);
-    z-index: -1;
-}
-
-.about .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 90vh;
-}
-
-.about h1 {
-    margin-top: 2em;
-    font-size: 3em;
-    color: var(--primary-color);
-    z-index: 223;
-}
-
-.about .img_icon {
-    margin-top: 3em;
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
-    border-radius: 10px;
-}
-
-.about p {
-    margin: 2em auto;
-    margin-bottom: 3em;
-    text-align: justify;
-    line-height: 1.5em;
-}
-
-
-/* EVENTS */
-
-.events .container {
-    position: relative;
-    padding-bottom: 4em;
-    min-height: 80vh;
-}
-
-.events .grid {
-    gap: 30px;
-    z-index: 1;
-    align-items: start;
-}
-
-.events h1 {
-    font-size: 3em;
-    color: var(--primary-color);
-}
-
-.events .images-anim {
-    position: relative;
-    width: 390px;
-    height: 390px;
-    float: center;
-    margin-left: 2.4em;
-    padding-left: 2.4em;
-    overflow: auto;
-    border-radius: 10px;
-    animation-name: bganimation;
-    animation-direction: alternate-reverse;
-    animation-duration: 15s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    animation-timing-function: ease-in-out;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-timing-function: ease-in-out;
-    border: 10px var(--primary-bg-color) solid;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    transition: transform 0.2s ease-in;
-}
-
-.events .images-anim:hover {
-    transform: translateY(-5px);
-}
-
-.events {
-    position: relative;
-}
-
-.events img {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: -100;
-}
-
-
-/* IEEE HELP */
-
-.ieee_help {
-    position: relative;
-    padding-bottom: 3em;
-    min-height: 80vh;
-    /* background-image: url("../../assets/images/purple_wave.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center; */
-}
-
-.ieee_help img {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -100;
-}
-
-.ieee_help h1 {
-    font-size: 2em;
-}
-
-.ieee_help p {
-    text-align: justify;
-    margin-top: 1em;
-}
-
-.ieee_help .grid {
-    align-items: start;
-    gap: 3em;
-}
-
-
-/* DOMAINS */
-
-.tech_heading .container {
-    /* display: flex;
-        flex-direction: column;
-        align-items: center; */
-    /* padding-bottom: 3em; */
-    overflow: hidden;
-    /* border: 1px rebeccapurple solid; */
-    position: relative;
-}
-
-.tech_heading {
-    height: 100%;
-    margin: auto 2em;
-}
-
-.tech_heading .cyan {
-    border-top: 5px solid var(--cyan);
-}
-
-.tech_heading .blue {
-    border-top: 5px solid var(--blue);
-}
-
-.tech_heading .red {
-    border-top: 5px solid var(--red);
-}
-
-.tech_heading .yellow {
-    border-top: 5px solid var(--orange);
-}
-
-.tech_heading h1 {
-    /* margin-top: -150px; */
-    font-size: 3em;
-    color: var(--primary-color);
-}
-
-.tech_heading .subheading {
-    margin-bottom: 15px;
-}
-
-.tech_heading .box p {
-    color: var(--grayishBlue);
-}
-
-.tech_heading .grid {
-    align-items: start;
-}
-
-.tech_heading .box {
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
-    padding: 40px;
-    margin: 20px;
-    height: 85%;
-    align-items: center;
-}
-
-.tech_heading .box:hover {
-    box-shadow: 0px 30px 40px -30px var(--grayishBlue);
-    transform: scale(1.01);
-    transition: all ease 0.1s;
-}
-
-.tech_heading img {
-    float: right;
-}
-
-
-/* Horizontal Rule Line */
-
-hr.style1 {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient( to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
-
-/* IEEE WEEKLIES */
-
-.ieee_weeklies {
-    /* margin-top: 2em; */
-    background: var(--primary-color);
-    /* padding: 2em; */
-}
-
-.ieee_weeklies .container {
-    /* overflow: hidden; */
-    padding-bottom: 2em;
-    position: relative;
-}
-
-.ieee_weeklies h1 {
-    padding-top: 1em;
-    font-size: 3em;
-    font-family: "Dancing Script", cursive;
-    color: var(--primary-bg-color);
-}
-
-.ieee_weeklies p {
-    margin-bottom: 2em;
-    color: var(--grayishBlue);
-}
-
-.ieee_weeklies a {
-    color: #eee;
-    font-style: bold;
-    font-weight: 400;
-    padding-bottom: 0.5em;
-}
-
-.ieee_weeklies p a:hover {
-    border-bottom: lightblue 2px solid;
-}
-
-.ieee_weeklies .weekly1 .custom-card {
-    background: #a8ff78;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #78ffd6, #a8ff78);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.ieee_weeklies .weekly2 .custom-card {
-    background: #3a1c71;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.ieee_weeklies .weekly3 .custom-card {
-    background: #ffafbd;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffc3a0, #ffafbd);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffc3a0, #ffafbd);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.ieee_weeklies .custom-card {
-    position: relative;
-    transition: transform 0.2s ease-in;
-    justify-self: center;
-    height: 340px;
-    width: 340px;
-}
-
-.ieee_weeklies .custom-card:hover {
-    /* transform: translateY(-5px); */
-    transform: scale(1.01);
-}
-
-
-/* VIDEO */
-
-.video {
-    background: var(--secondary-bg-color);
-    padding: 3em;
-}
-
-.video .grid {
-    align-items: center;
-    gap: 20px;
-}
-
-.video .canva_anim {
-    margin-right: 0;
-}
-
-
-/* Animations for Images */
-
-@keyframes bganimation {
-    0% {
-        background-image: url("https://github.com/Meera-W/IEEE-VJTI-SITE/blob/master/images/ieee_400.png?raw=true");
-    }
-    25% {
-        background-image: url("https://github.com/Meera-W/IEEE-VJTI-SITE/blob/master/images/events/1.png?raw=true");
-    }
-    50% {
-        background-image: url("https://github.com/Meera-W/IEEE-VJTI-SITE/blob/master/images/events/2.png?raw=true");
-    }
-    75% {
-        background-image: url("https://github.com/Meera-W/IEEE-VJTI-SITE/blob/master/images/events/3.png?raw=true");
-    }
-    100% {
-        background-image: url("https://github.com/Meera-W/IEEE-VJTI-SITE/blob/master/images/events/5.png?raw=true");
-    }
-}
-
-
-/* Media Queries */
-
-@media (max-width: 1200px) {
-    .ieee_weeklies .grid {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: 1fr !important;
-        z-index: 1;
-        /* align-items: center; */
-        /* justify-self: center; */
-        justify-items: center;
-    }
-    .showcase::before,
-    .showcase::after {
-        bottom: 308px;
-        top: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-    .events .images-anim {
-        width: 300px;
-        height: 300px;
-        justify-self: center;
-        margin: 0;
-        /* padding-bottom: 2em; */
-        margin-bottom: 2em;
-    }
-    .tech_heading .grid {
-        align-items: start;
-    }
-    .video .grid,
-    .showcase .grid,
-    .events .grid {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: 1fr !important;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        justify-items: center;
-        gap: 10px;
-        z-index: 1;
-    }
-    .ieee_help .grid,
-    .tech_heading .grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        text-align: center;
-        justify-content: center;
-        align-items: start;
-        justify-items: center;
-        gap: 20px;
-        z-index: 1;
-    }
-    .tech_heading .grid .os {
-        grid-column: 1 / span 2;
-    }
-    .video {
-        position: relative;
-    }
-    .video iframe,
-    .video .canva_anim img {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-    .showcase-img {
-        position: relative;
-        height: 100%;
-        width: 100%;
-    }
-    .showcase img {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-@media (max-width: 500px) {
-    .grid {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: 1fr !important;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
-    .showcase {
-        height: auto;
-        width: 100%;
-    }
-    .showcase .container {
-        margin-top: -80px;
-    }
-    .showcase-text {
-        /* margin-top: 2em; */
-        margin-top: 20px;
-        /* background-color: red; */
-        padding-top: 40px;
-        justify-self: center;
-    }
-    .showcase h1 {
-        font-size: 3em;
-        text-align: center;
-        line-height: 1.2em;
-    }
-    .about h1,
-    .events h1,
-    .ieee_help h1,
-    .ieee_weeklies h1,
-    .tech_heading h1 {
-        font-size: 1.9em;
-    }
-    .about h5,
-    .events h5,
-    .ieee_weeklies p {
-        font-size: 1em;
-    }
-    .tech_heading .grid .os {
-        grid-column: 1 / 1;
-    }
-    .ieee_weeklies .custom-card {
-        position: relative;
-        height: 100%;
-        width: 100%;
-    }
-    .ieee_weeklies .custom-card img {
-        position: relative;
-        height: 100%;
-        width: 100%;
-    }
-}

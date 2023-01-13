@@ -1,54 +1,182 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
-
-* {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Estonia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,500&display=swap');
+@import url(//db.onlinewebfonts.com/c/7a20d101126c5370e8b5811da3569fb4?family=Sansation);
 
 :root {
-  --primary-color: #152238;
-  --primary-bg-color: #fff;
-  --secondary-bg-color: #eef1f2;
-  --footer-bg-color: #333;
-  --dark-grey: #222;
-
-  --ieee_cyan: #1abc9e;
-  --ieee_blue: #386cb5;
-  --ieee_red: #e74c3c;
-  --ieee_yellow: #f1c40f;
-  --red: hsl(0, 78%, 62%);
-  --cyan: hsl(180, 62%, 55%);
-  --orange: hsl(34, 97%, 64%);
-  --blue: hsl(212, 86%, 64%);
-
-  --grayishBlue: hsl(229, 6%, 66%);
-  --veryLightGray: hsl(0, 0%, 98%);
+    --font-family: 'Manrope', sans-serif;
+    --font-family-lato: 'Lato', sans-serif;
+    --font-family-cursive: 'Kavivanar', cursive;
+    --font-family-heading: 'Poppins', sans-serif;
+    --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+    --gradient-text1: linear-gradient(to right, #360033, #0b8793);
+    --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
+    --color-bg: #fff;
+    --color-footer: #280C34;
+    --color-navbar: #110516;
+    --color-blog: #042c54;
+    --color-light: #e6e6fa;
+    --color-lavender: #bfb6c9;
+    --color-subtext: #342e36;
+    --color-box-shadow: #280c34;
+    --light-pink: #FDA88B;
+    --light-green: #86C82D;
+    --light-blue: #52DBB5;
+    --lighter-blue: #C0E1D8;
+    --grayishBlue: hsl(229, 6%, 66%);
 }
 
-a {
-  text-decoration: none;
+.App {
+    margin-top: calc(4em + 2vmin);
+    margin: 0;
+    padding: 0;
+    /* max-width: 1000px; */
 }
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
 html {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* width: 100%; */
+    /* height: 100%; */
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
+    background: var(--color-bg);
+    line-height: 1.6;
+    color: #333;
 }
 
-ul {
-  list-style-type: none;
+a {
+    color: unset;
+    text-decoration: none;
 }
 
+
+/* angrytools.com to make a nice gradient */
+
+.gradient__bg {
+    background: -moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+    /* safari 5.1+,chrome 10+ */
+    background: -webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+    /* opera 11.10+ */
+    background: -o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+    /* ie 10+ */
+    background: -ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+    /* global 92%+ browsers support */
+    background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+}
+
+.gradient__text {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient__text1 {
+    background: var(--gradient-text1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section__padding {
+    padding: 4rem 6rem;
+}
+
+.section__margin {
+    margin: 4rem 6rem;
+}
+
+
+/* for animations, use this : https://animista.net/ */
+
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@media screen and(max-width: 700px) {
+    .section__padding {
+        padding: 4rem;
+    }
+    .section__margin {
+        margin: 4rem;
+    }
+}
+
+@media screen and(max-width: 550px) {
+    .section__padding {
+        padding: 4rem 2rem;
+    }
+    .section__margin {
+        margin: 4rem 2rem;
+    }
+}
+
+.shadow-pop-br {
+    -webkit-animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+@-webkit-keyframes shadow-pop-br {
+    0% {
+        -webkit-box-shadow: 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow);
+        box-shadow: 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow);
+        -webkit-transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        -webkit-box-shadow: 1px 1px var(--color-box-shadow), 2px 2px var(--color-box-shadow), 3px 3px var(--color-box-shadow), 4px 4px var(--color-box-shadow), 5px 5px var(--color-box-shadow), 6px 6px var(--color-box-shadow), 7px 7px var(--color-box-shadow), 8px 8px var(--color-box-shadow);
+        box-shadow: 1px 1px var(--color-box-shadow), 2px 2px var(--color-box-shadow), 3px 3px var(--color-box-shadow), 4px 4px var(--color-box-shadow), 5px 5px var(--color-box-shadow), 6px 6px var(--color-box-shadow), 7px 7px var(--color-box-shadow), 8px 8px var(--color-box-shadow);
+        -webkit-transform: translateX(-8px) translateY(-8px);
+        transform: translateX(-8px) translateY(-8px);
+    }
+}
+
+@keyframes shadow-pop-br {
+    0% {
+        -webkit-box-shadow: 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow);
+        box-shadow: 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow), 0 0 var(--color-box-shadow);
+        -webkit-transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        -webkit-box-shadow: 1px 1px var(--color-box-shadow), 2px 2px var(--color-box-shadow), 3px 3px var(--color-box-shadow), 4px 4px var(--color-box-shadow), 5px 5px var(--color-box-shadow), 6px 6px var(--color-box-shadow), 7px 7px var(--color-box-shadow), 8px 8px var(--color-box-shadow);
+        box-shadow: 1px 1px var(--color-box-shadow), 2px 2px var(--color-box-shadow), 3px 3px var(--color-box-shadow), 4px 4px var(--color-box-shadow), 5px 5px var(--color-box-shadow), 6px 6px var(--color-box-shadow), 7px 7px var(--color-box-shadow), 8px 8px var(--color-box-shadow);
+        -webkit-transform: translateX(-8px) translateY(-8px);
+        transform: translateX(-8px) translateY(-8px);
+    }
+}
