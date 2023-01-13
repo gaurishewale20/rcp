@@ -7,6 +7,7 @@ import './utilities.css';
 import NavComponent from './components/Navbar/Navbar';
 import Loader from './components/Loader/Loader';
 import Footer from './components/Footer/Footer';
+import RequestForm from './components/RequestForm/RequestForm';
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import ScrollToBottom from './components/ScrollToBottom/ScrollToBottom';
@@ -30,6 +31,7 @@ const App =()=> {
       <Switch>
           <Route path="/" exact component={LazyHome}/>
           <Route path="/login" exact component={LazyAuth}/>
+          <Route path="/request" exact component={RequestForm}/>
           <Route component={Error404}/>
       </Switch>
       </Suspense>
