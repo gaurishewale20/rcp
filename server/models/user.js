@@ -17,6 +17,8 @@ const userSchema = mongoose.Schema({
   sem : {type : Number, required:  true},
   program : {type: String, required:  true},
   department : {type : String, required:  true},
+  vjti_id : {type : Buffer, required:  true},
+  aadhar_card : {type : Buffer, required:  true},
 
   //passes
   currentPass: {
