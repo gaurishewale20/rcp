@@ -1,21 +1,20 @@
-import React,{useState,useEffect} from "react";
-
-import "./Footer.css";
-import logo from "../../assets/images/logo.png";
+import React from 'react';
+import useStyles from './styles';
+import { Typography } from '@material-ui/core';
+import SpaOutlinedIcon from '@material-ui/icons/SpaOutlined';
 
 
 const Footer = () => {
+    const classes = useStyles();
+    return (
+        <div className={classes.footer}>
 
+            <Typography variant="caption" gutterbottom>
+                Copyright ©Sixth Sense 2023
+            </Typography>
+        </div>
+    );
 
-   return (
-    <>
-      <section className="footer_section bg-footer">
-        <footer className="footer">
-          Copyright @ Sixth Sense
-        </footer>
-      </section>
-    </>
-  );
 };
 
 export default Footer;

@@ -16,7 +16,7 @@ import Error404 from './components/Error404/Error404';
 const LazyHome = lazy(() => import('./components/Home/Home'));
 const LazyAuth = lazy(() => import('./components/Auth/Auth'));  // SignIn-SignUp page
 
-const App=()=> {
+const App =()=> {
 
   const history = createBrowserHistory();
 

@@ -25,6 +25,7 @@ const NavComponent = () => {
       <Navbar collapseOnSelect fixed='top' expand='lg' className="navv" variant="light" >
         <div className="container-fluid">
             <a className="navbar-brand" href="/"><img src={logo} loading="lazy" alt='logo' className="m-1 custom-logo" /></a>
+            
             <Navbar.Toggle aria-controls='responsive-navbar-nav' />
             <Navbar.Collapse id='responsive-navbar-nav' className="justify-content-end">
               <Nav>
@@ -36,6 +37,7 @@ const NavComponent = () => {
                 )}
               </Nav>
             </Navbar.Collapse>
+
         </div>
       </Navbar>
     </>
