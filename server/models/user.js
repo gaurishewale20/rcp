@@ -17,6 +17,8 @@ const userSchema = mongoose.Schema({
   sem: { type: Number, required: false },
   program: { type: String, required: false },
   department: { type: String, required: false },
+  vjti_id: { type: String, required: false },
+  aadhar_card: { type: String, required: false },
 
   //passes
   currentPass: {
