@@ -79,7 +79,6 @@
 
 // export default SignUp;
 
-
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
@@ -104,15 +103,15 @@ const initialState = {
   firstName: "",
   lastName: "",
   email: "",
-  phone_number: "",
+  phoneNo: "",
   gender: "",
   dob: "",
   transportLine: "",
   address: "",
-  regId : "",
+  regId: "",
   a_year: "",
   sem: "",
-  program : "",
+  program: "",
   department: "",
   vjti_id: "",
   aadhar_card: "",
@@ -189,7 +188,7 @@ const SignUp = () => {
             />
             {isSignup && (
               <Input
-                name="phone_number"
+                name="phoneNo"
                 label="Phone Number"
                 handleChange={handleChange}
               />
@@ -234,11 +233,7 @@ const SignUp = () => {
               />
             )}
             {isSignup && (
-              <Input
-                name="sem"
-                label="Semester"
-                handleChange={handleChange}
-              />
+              <Input name="sem" label="Semester" handleChange={handleChange} />
             )}
             {isSignup && (
               <Input
