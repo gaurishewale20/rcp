@@ -215,7 +215,6 @@ const SignUp = () => {
                 name="address"
                 label="Address"
                 handleChange={handleChange}
-                // type="email"
               />
             )}
             {isSignup && (
@@ -252,16 +251,16 @@ const SignUp = () => {
             {isSignup && (
               <Input
                 name="vjti_id"
-                label="VJTI ID"
-                type="file"
+                label="VJTI ID Drive URL"
+                // type="file"
                 handleChange={handleChange}
               />
             )}
             {isSignup && (
               <Input
                 name="aadhar_card"
-                label="Aadhar Card"
-                type="file"
+                label="Aadhar Card Drive URL"
+                // type="file"
                 handleChange={handleChange}
               />
             )}
