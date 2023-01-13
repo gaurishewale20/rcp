@@ -1,52 +1,50 @@
-/* Pen-specific styles */
-* {
-    box-sizing: border-box;
-  }
-  body {
-    font-size: 1.25rem;
-    font-family: sans-serif;
-    line-height: 150%;
-    text-shadow: 0 2px 2px #b6701e;
-  }
-  
+.pass_container{
+    min-height: 150vh;
+    
+}
 
-  
-  /* div {
-    height: 100%;
-  }
-  
-  article {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    padding: 20px;
-  }
-   */
+.concession_heading{
+    font-family: var(--font-family);
+    margin-top:1em;
+    color:var(--color-footer);
+}
 
+.pass_heading{
+    font-family: var(--font-family-heading);
+    font-weight: 300;
+    color:var(--color-navbar);
+    padding-top: 1em;
+    
+}
 
-  h1 {
-    font-size: 1.75rem;
-    margin: 0 0 0.75rem 0;
-  }
-  
-  /* Pattern styles */
-  /* .container {
-    display: table;
-    width: 100%;
-  }
-  
-  .left-half {
-    background-color: #ff9e2c;
-    position: absolute;
-    left: 0px;
-    width: 50%;
-  }
-  
-  .right-half {
-    background-color: #b6701e;
-    position: absolute;
-    right: 0px;
-    width: 50%;
-  } */
+fieldset {
+    border: 1px solid var(--color-lavender);
+    padding:1.2em;
+}
+
+fieldset p{
+    padding-top:0.7em;
+}
+
+.sub{
+    padding: 1em;
+    margin-top:0.7em;
+    border-radius: 0.4em;
+    border: solid 0.1px var(--color-lavender);
+    font-family: var(--font-family-lato);
+    color: var(--color-navbar);
+}
+
+.sub:hover{
+    background-color:var(--color-medium);
+    color:#fff;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: var(--font-family-lato);
+    padding:0.6em;
+}
+

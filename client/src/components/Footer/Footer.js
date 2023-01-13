@@ -4,12 +4,15 @@ import { Typography } from '@material-ui/core';
 
 
 const Footer = () => {
+    const d = new Date();
+    let year = d.getFullYear();
+
     const classes = useStyles();
     return (
         <div className={classes.footer}>
 
             <Typography variant="caption" gutterbottom>
-                Copyright ©Sixth Sense 2023
+                Copyright ©Sixth Sense {year}
             </Typography>
         </div>
     );

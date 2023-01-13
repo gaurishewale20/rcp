@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import "./RequestForm.css";
 
 const formReducer = (state, e) => {
@@ -8,13 +8,13 @@ const formReducer = (state, e) => {
       StartDateHist: "",
       EndDateHist: "",
       StartStationHist: "",
-      EndStationHist:"",
+      EndStationHist: "",
       period: "",
       classs: "",
-      StartDateCurr:"",
-      EndDateCurr:"",
-      StartStationCurr:"",
-      EndStationCurr:""
+      StartDateCurr: "",
+      EndDateCurr: "",
+      StartStationCurr: "",
+      EndStationCurr: "",
     };
   }
 
@@ -36,6 +36,10 @@ const addPass = async (formData) => {
 
 const RequestForm = () => {
   const [formData, setFormData] = useReducer(formReducer, {});
+  const [TicketNoErr, setTicketNoErr] = useState("");
+  const [HistDateErr, setHistDateErr] = useState("");
+
+  formData.profile = JSON.parse(localStorage.getItem('profile'));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,11 +53,30 @@ const RequestForm = () => {
       name: e.target.name,
       value: e.target.value,
     });
+    const { name, value } = e.target;
+
+    switch (name) {
+      case "TicketNo":
+        setTicketNoErr(
+          value.length === 4 ? "" : "Ticket No should be exactly 4 digits"
+        );
+        break;
+
+      case "EndDateHist":
+        setHistDateErr(
+          formData.StartDateHist < formData.EndDateHist
+            ? ""
+            : "Start date cannot be greater than end date!"
+        );
+        break;
+
+      default:
+        break;
+    }
   };
 
   return (
-    <div class="container">
-      <div class="container-fluid">
+    <div class="container pass_container">
       {/* <div>
         You are submitting the following:
         <ul>
@@ -64,12 +87,12 @@ const RequestForm = () => {
           ))}
         </ul>
       </div> */}
-      <h1>Concession Form</h1>
+      <h1 className="concession_heading text-center">Concession Form</h1>
       <form onSubmit={handleSubmit}>
-        <h2>Previous Pass Details</h2>
-        <fieldset class="left-half">
+        <h2 className="pass_heading">Previous Pass Details</h2>
+        <fieldset>
           <label>
-            <p>Ticket no</p>
+            <p>Ticket No.</p>
             <input
               type="text"
               name="TicketNo"
@@ -78,6 +101,7 @@ const RequestForm = () => {
               required
             ></input>
           </label>
+          {TicketNoErr.length > 0 && <span>{TicketNoErr}</span>}
           <label>
             <p>Starting Date</p>
             <input
@@ -98,6 +122,7 @@ const RequestForm = () => {
               required
             ></input>
           </label>
+          {HistDateErr.length > 0 && <span>{HistDateErr}</span>}
           <label>
             <p>Start Station</p>
             <input
@@ -144,8 +169,8 @@ const RequestForm = () => {
           </label>
         </fieldset>
 
-        <h2>Current Pass Details</h2>
-        <fieldset class="right-half">
+        <h2 className="pass_heading">Current Pass Details</h2>
+        <fieldset>
           <label>
             <p>Starting Date</p>
             <input
@@ -187,10 +212,10 @@ const RequestForm = () => {
             ></input>
           </label>
         </fieldset>
-        <button type="submit">Submit</button>
+        <button type="submit" className="sub">Submit</button>
       </form>
       </div>
-    </div>
+    
   );
 };
 
