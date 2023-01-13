@@ -17,3 +17,5 @@ API.interceptors.request.use((req) => {
 
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);
+export const forgot = (formData) => API.post('/forgot/sendmail', formData);
+export const resetpw = (formData) => API.post('/forgot/reset_password', formData);

@@ -15,6 +15,8 @@ import Error404 from './components/Error404/Error404';
 
 const LazyHome = lazy(() => import('./components/Home/Home'));
 const LazyAuth = lazy(() => import('./components/Auth/Auth'));  // SignIn-SignUp page
+const Forgot = lazy(() => import('./components/Forgot/Forgot'));
+const ResetPW = lazy(() => import('./components/ResetPW/ResetPW'));
 
 const App=()=> {
 
@@ -30,6 +32,8 @@ const App=()=> {
       <Switch>
           <Route path="/" exact component={LazyHome}/>
           <Route path="/login" exact component={LazyAuth}/>
+          <Route path="/forgot" exact component={Forgot}/>
+          <Route path="/forgot/reset_password" exact component={ResetPW}/>
           <Route component={Error404}/>
       </Switch>
       </Suspense>

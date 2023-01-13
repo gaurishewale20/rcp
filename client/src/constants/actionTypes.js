@@ -9,3 +9,5 @@ export const END_LOADING = 'END_LOADING';
 
 export const ADMIN = 'ADMIN';
 export const LOGOUT = 'LOGOUT';
+
+export const FORGOT = 'FORGOT';
