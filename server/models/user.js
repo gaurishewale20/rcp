@@ -7,16 +7,16 @@ const userSchema = mongoose.Schema({
   id: { type: String },
 
   //extra profile details
-  phoneNo : { type: String, required:  false },
-  gender : {type : String , required:  false},
-  dob : {type : Date, required:  false},
-  address : {type: String, required:  false},
-  transportLine : { type : String, required:  false},
-  regId :{ type : String, required:  false},
-  a_year : {type: Number, required:  false},
-  sem : {type : Number, required:  false},
-  program : {type: String, required:  false},
-  department : {type : String, required:  false}
+  phoneNo : { type: String, required:  true },
+  gender : {type : String , required:  true},
+  dob : {type : Date, required:  true},
+  address : {type: String, required:  true},
+  transportLine : { type : String, required:  true},
+  regId :{ type : String, required:  true},
+  a_year : {type: Number, required:  true},
+  sem : {type : Number, required:  true},
+  program : {type: String, required:  true},
+  department : {type : String, required:  true}
 
 
 });
