@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import "./RequestForm.css";
 
 const formReducer = (state, e) => {
@@ -8,13 +8,13 @@ const formReducer = (state, e) => {
       StartDateHist: "",
       EndDateHist: "",
       StartStationHist: "",
-      EndStationHist:"",
+      EndStationHist: "",
       period: "",
       classs: "",
-      StartDateCurr:"",
-      EndDateCurr:"",
-      StartStationCurr:"",
-      EndStationCurr:""
+      StartDateCurr: "",
+      EndDateCurr: "",
+      StartStationCurr: "",
+      EndStationCurr: "",
     };
   }
 
@@ -36,6 +36,10 @@ const addPass = async (formData) => {
 
 const RequestForm = () => {
   const [formData, setFormData] = useReducer(formReducer, {});
+  const [TicketNoErr, setTicketNoErr] = useState("");
+  const [HistDateErr, setHistDateErr] = useState("");
+
+  formData.profile = JSON.parse(localStorage.getItem('profile'));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,6 +53,26 @@ const RequestForm = () => {
       name: e.target.name,
       value: e.target.value,
     });
+    const { name, value } = e.target;
+
+    switch (name) {
+      case "TicketNo":
+        setTicketNoErr(
+          value.length === 4 ? "" : "Ticket No should be exactly 4 digits"
+        );
+        break;
+
+      case "EndDateHist":
+        setHistDateErr(
+          formData.StartDateHist < formData.EndDateHist
+            ? ""
+            : "Start date cannot be greater than end date!"
+        );
+        break;
+
+      default:
+        break;
+    }
   };
 
   return (
@@ -77,6 +101,7 @@ const RequestForm = () => {
               required
             ></input>
           </label>
+          {TicketNoErr.length > 0 && <span>{TicketNoErr}</span>}
           <label>
             <p>Starting Date</p>
             <input
@@ -97,6 +122,7 @@ const RequestForm = () => {
               required
             ></input>
           </label>
+          {HistDateErr.length > 0 && <span>{HistDateErr}</span>}
           <label>
             <p>Start Station</p>
             <input

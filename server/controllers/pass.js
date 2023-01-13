@@ -2,8 +2,8 @@ import Current from "../models/current.js";
 import History from "../models/history.js";
 
 export const addPass = async (req, res) => {
-  console.log(req.body);
   const {
+    profile,
     TicketNo,
     StartDateHist,
     EndDateHist,
@@ -25,6 +25,8 @@ export const addPass = async (req, res) => {
     period,
     classs,
   });
+
+  histPass.user = profile.result._id;
   await histPass.save();
 
   const currPass = new Current({
@@ -34,6 +36,7 @@ export const addPass = async (req, res) => {
     EndStationCurr,
   });
 
+  currPass.user = profile.result._id;
   await currPass.save();
 
   console.log("Saved Pass");
