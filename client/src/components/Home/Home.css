@@ -12,7 +12,7 @@ h2 {
     font-size: 3em;
 }
 
-a:hover{
+ a.loginn:hover{
     border-bottom: 0.1em rgb(123, 63, 175) solid;
     padding-bottom: 0.1em;
 }

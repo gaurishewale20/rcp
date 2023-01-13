@@ -11,9 +11,31 @@
 
 .navv {
     background-color: var(--color-footer);
-    margin: 0;
+    margin: 0;   
     /* padding: 1em; */
     /* border: red 1px solid; */
+}
+
+.hidden_div{
+    margin-right: 1.5em;
+}
+
+.main_heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ /*border: red solid 1px;*/
+}
+
+.main_heading .heading_img{
+    justify-self: end;
+    padding-right: 0;
+    margin-right: 0;
+    /*border: 1px solid white;*/
+}
+
+.navv a:hover{
+    text-decoration: none;
 }
 
 .navv2 {
@@ -44,4 +66,9 @@
     align-items: center;
     justify-content: space-evenly;
    
+}
+
+.vjti_img{
+    padding: 0;
+    margin:0;
 }

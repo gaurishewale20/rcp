@@ -22,8 +22,8 @@
           </div>
 
           <br />
-          <h4 className="future pt-2 gradient__text1"><a href="/login">Login</a> to access concession services.</h4>
-          <h4 className="future pt-2 gradient__text1">Don't have an account? <a href="/signup">Click here to Signup</a></h4>
+          <h4 className="future pt-2 gradient__text1"><a href="/login" className="loginn">Login</a> to access concession services.</h4>
+          <h4 className="future pt-2 gradient__text1">Don't have an account? <a href="/login" className="loginn">Click here to Signup</a></h4>
         </div>
 
         {/* <div className="caru">
