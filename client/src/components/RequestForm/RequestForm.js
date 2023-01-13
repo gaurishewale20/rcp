@@ -97,7 +97,6 @@ const RequestForm = () => {
               name="TicketNo"
               value={formData.TicketNo || ""}
               onChange={handleChange}
-              required
             ></input>
           </label>
           {TicketNoErr.length > 0 && <span>{TicketNoErr}</span>}
@@ -108,7 +107,6 @@ const RequestForm = () => {
               name="StartDateHist"
               value={formData.StartDateHist || ""}
               onChange={handleChange}
-              required
             ></input>
           </label>
           <label>
@@ -118,7 +116,6 @@ const RequestForm = () => {
               name="EndDateHist"
               value={formData.EndDateHist || ""}
               onChange={handleChange}
-              required
             ></input>
           </label>
           {HistDateErr.length > 0 && <span>{HistDateErr}</span>}
@@ -129,7 +126,7 @@ const RequestForm = () => {
               name="StartStationHist"
               value={formData.StartStationHist || ""}
               onChange={handleChange}
-              required
+              
             ></input>
           </label>
           <label>
@@ -139,7 +136,7 @@ const RequestForm = () => {
               name="EndStationHist"
               value={formData.EndStationHist || ""}
               onChange={handleChange}
-              required
+              
             ></input>
           </label>
           <label>

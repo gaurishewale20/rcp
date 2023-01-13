@@ -1,9 +1,9 @@
 import Current from "../models/current.js";
 import History from "../models/history.js";
-import user from "../models/user.js";
 import User from "../models/user.js";
 
 export const addPass = async (req, res) => {
+  
   const {
     profile,
     TicketNo,
@@ -22,7 +22,7 @@ export const addPass = async (req, res) => {
     periodCurr,
     classsCurr,
   } = req.body;
-
+  const user = await User.findById(profile.result._id);
   const histPass = new History({
     TicketNo,
     StartDateHist,
@@ -34,7 +34,10 @@ export const addPass = async (req, res) => {
   });
 
   histPass.user = profile.result._id;
-  const histPassSaved = await histPass.save();
+  if (TicketNo !== "") {
+    const histPassSaved = await histPass.save();
+    user.historyPass.push(histPassSaved._id);
+  }
 
   const currPass = new Current({
     StartDateCurr,
@@ -46,10 +49,8 @@ export const addPass = async (req, res) => {
 
   currPass.user = profile.result._id;
   const currPassSaved = await currPass.save();
-
-  const user = await User.findById(profile.result._id);
+  
   user.currentPass = currPassSaved._id;
-  user.historyPass.push(histPassSaved._id);
   await user.save();
 };
 

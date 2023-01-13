@@ -5,7 +5,8 @@ import {
     APPROVE,
     DENY,
     START_LOADING,
-    END_LOADING
+    END_LOADING,
+    SEARCH_STUDENT
 } from "../constants/actionTypes";
 
 const requestreducer = (state = { isLoading: true, requests: [] }, action) => {

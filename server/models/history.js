@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 
 const historySchema = mongoose.Schema(
   {
-    TicketNo: { type: String, required: true },
-    StartDateHist: { type: Date, required: true },
-    EndDateHist: { type: Date, required: true },
-    StartStationHist: { type: String, required: true },
-    EndStationHist: { type: String, required: true },
+    TicketNo: { type: String },
+    StartDateHist: { type: Date },
+    EndDateHist: { type: Date },
+    StartStationHist: { type: String },
+    EndStationHist: { type: String },
     periodHist: {
       type: String,
       enum: ["Monthly", "Quarterly"],
@@ -15,14 +15,14 @@ const historySchema = mongoose.Schema(
       type: String,
       enum: ["First", "Second"],
     },
-    user : {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref : 'User'
+      ref: "User",
     },
-    status : {
-      type : String,
-      default : 'Pending'
-    }
+    status: {
+      type: String,
+      default: "Pending",
+    },
   },
   { timestamps: true }
 );
