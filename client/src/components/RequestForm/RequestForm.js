@@ -53,6 +53,7 @@ const RequestForm = () => {
 
   return (
     <div class="container">
+      <div class="container-fluid">
       {/* <div>
         You are submitting the following:
         <ul>
@@ -188,6 +189,7 @@ const RequestForm = () => {
         </fieldset>
         <button type="submit">Submit</button>
       </form>
+      </div>
     </div>
   );
 };

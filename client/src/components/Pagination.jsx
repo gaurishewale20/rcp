@@ -23,14 +23,14 @@ const Paginate = ({page}) => {
 
 
   return (<>{
-    (location.pathname === '/events')?( <Pagination
+    (location.pathname === '/')?( <Pagination
       classes={{ ul: classes.ul }}
       count={numberOfPages}
       page={Number(page) || 1}
       variant="outlined"
       color="primary"
       renderItem={(item) => (
-        <PaginationItem {...item} component={Link} to={`/events?page=${item.page}`} onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}  /> 
+        <PaginationItem {...item} component={Link} to={`/pass/requests?page=${item.page}`} onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}  /> 
       )}
     />):( <Pagination
       classes={{ ul: classes.ul }}

@@ -9,13 +9,17 @@ import Loader from './components/Loader/Loader';
 import Footer from './components/Footer/Footer';
 import RequestForm from './components/RequestForm/RequestForm';
 
+
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import ScrollToBottom from './components/ScrollToBottom/ScrollToBottom';
 import Error404 from './components/Error404/Error404';
-
+import PastRequests from './components/AdminDashboard/PastRequests';
+import PendingRequests from './components/AdminDashboard/PendingRequests';
+import SearchStudent from './components/AdminDashboard/SearchStudent';
 
 const LazyHome = lazy(() => import('./components/Home/Home'));
 const LazyAuth = lazy(() => import('./components/Auth/Auth'));  // SignIn-SignUp page
+const LazyAdminDashboard = lazy(()=> import('./components/AdminDashboard/AdminDashboard'));
 
 const App =()=> {
 
@@ -23,6 +27,7 @@ const App =()=> {
 
   return (
     <Router history={history}>
+
     <NavComponent/>
     <ScrollToBottom/>
     <ScrollToTop />
@@ -32,6 +37,10 @@ const App =()=> {
           <Route path="/" exact component={LazyHome}/>
           <Route path="/login" exact component={LazyAuth}/>
           <Route path="/request" exact component={RequestForm}/>
+          <Route path="/admindashboard" exact component={LazyAdminDashboard}/>
+          <Route path="/pastrequests" exact component={PastRequests}/>
+          <Route path="/pendingrequests" exact component={PendingRequests}/>
+          <Route path="/studentsearch" exact component={SearchStudent}/>
           <Route component={Error404}/>
       </Switch>
       </Suspense>

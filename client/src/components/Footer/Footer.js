@@ -1,7 +1,6 @@
 import React from 'react';
 import useStyles from './styles';
 import { Typography } from '@material-ui/core';
-import SpaOutlinedIcon from '@material-ui/icons/SpaOutlined';
 
 
 const Footer = () => {
