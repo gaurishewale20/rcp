@@ -1,0 +1,50 @@
+.pass_container{
+    min-height: 150vh;
+    
+}
+
+.concession_heading{
+    font-family: var(--font-family);
+    margin-top:1em;
+    color:var(--color-footer);
+}
+
+.pass_heading{
+    font-family: var(--font-family-heading);
+    font-weight: 300;
+    color:var(--color-navbar);
+    padding-top: 1em;
+    
+}
+
+fieldset {
+    border: 1px solid var(--color-lavender);
+    padding:1.2em;
+}
+
+fieldset p{
+    padding-top:0.7em;
+}
+
+.sub{
+    padding: 1em;
+    margin-top:0.7em;
+    border-radius: 0.4em;
+    border: solid 0.1px var(--color-lavender);
+    font-family: var(--font-family-lato);
+    color: var(--color-navbar);
+}
+
+.sub:hover{
+    background-color:var(--color-medium);
+    color:#fff;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: var(--font-family-lato);
+    padding:0.6em;
+}
+
