@@ -36,6 +36,7 @@ const SignUp = () => {
     } else {
       dispatch(signin(form, history));
     }
+    history.push('/');
   };
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
