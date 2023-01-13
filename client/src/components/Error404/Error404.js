@@ -10,6 +10,7 @@ const Error404 = () => {
             <img src={Error404Image} className="img-fluid mt-5 mx-auto px-5 d-block" alt="404 Page" />
             <p className=" text-center mt-5">OOPS! Webpage Doesn't Exist</p>
             <Link to="/"><p className="text-center">Go back to VJTI's Railway Concession Page</p></Link>
+
         </div>
     );
 };
