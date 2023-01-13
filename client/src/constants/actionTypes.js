@@ -10,3 +10,4 @@ export const END_LOADING = 'END_LOADING';
 export const APPROVE = 'APPROVE';
 export const DENY = 'DENY';
 export const LOGOUT = 'LOGOUT';
+export const SEARCH_STUDENT = 'SEARCH_STUDENT';

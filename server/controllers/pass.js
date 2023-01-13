@@ -1,7 +1,9 @@
 import Current from "../models/current.js";
 import History from "../models/history.js";
+import User from "../models/user.js";
 
 export const addPass = async (req, res) => {
+  
   const {
     profile,
     TicketNo,
@@ -9,37 +11,47 @@ export const addPass = async (req, res) => {
     EndDateHist,
     StartStationHist,
     EndStationHist,
-    period,
-    classs,
+    periodHist,
+    classsHist,
   } = req.body;
 
-  const { StartDateCurr, EndDateCurr, StartStationCurr, EndStationCurr } =
-    req.body;
-
+  const {
+    StartDateCurr,
+    StartStationCurr,
+    EndStationCurr,
+    periodCurr,
+    classsCurr,
+  } = req.body;
+  const user = await User.findById(profile.result._id);
   const histPass = new History({
     TicketNo,
     StartDateHist,
     EndDateHist,
     StartStationHist,
     EndStationHist,
-    period,
-    classs,
+    periodHist,
+    classsHist,
   });
 
   histPass.user = profile.result._id;
-  await histPass.save();
+  if (TicketNo !== "") {
+    const histPassSaved = await histPass.save();
+    user.historyPass.push(histPassSaved._id);
+  }
 
   const currPass = new Current({
     StartDateCurr,
-    EndDateCurr,
     StartStationCurr,
     EndStationCurr,
+    periodCurr,
+    classsCurr,
   });
 
   currPass.user = profile.result._id;
-  await currPass.save();
-
-  console.log("Saved Pass");
+  const currPassSaved = await currPass.save();
+  
+  user.currentPass = currPassSaved._id;
+  await user.save();
 };
 
 export const getPendingRequests = async (req, res) => {
@@ -65,7 +77,6 @@ export const getPastRequests = async (req, res) => {
 };
 
 export const approveRequest = async (req, res) => {
-  console.log(req.body);
   try {
     const {
       _id,

@@ -4,6 +4,7 @@ import {
   END_LOADING,
   APPROVE,
   DENY,
+  SEARCH_STUDENT,
 } from "../constants/actionTypes";
 import * as api from "../api/index.js";
 
@@ -47,3 +48,5 @@ export const denyRequest = (request) => async (dispatch) => {
     console.log(error);
   }
 };
+
+ export const searchStudent=()=>{};

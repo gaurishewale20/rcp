@@ -1,11 +1,12 @@
 import {
-  FETCH_ALL,
-  FETCH_REQUEST,
-  CREATE,
-  APPROVE,
-  DENY,
-  START_LOADING,
-  END_LOADING,
+    FETCH_ALL,
+    FETCH_REQUEST,
+    CREATE,
+    APPROVE,
+    DENY,
+    START_LOADING,
+    END_LOADING,
+    SEARCH_STUDENT
 } from "../constants/actionTypes";
 
 const requestreducer = (state = { isLoading: true, requests: [] }, action) => {
