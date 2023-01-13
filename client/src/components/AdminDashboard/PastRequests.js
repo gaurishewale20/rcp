@@ -4,7 +4,7 @@ import {Button, Table} from 'react-bootstrap';
 
 import { useDispatch, useSelector } from "react-redux";
 import { getRequests } from "../../actions/requests";
-import Request from '../Request/Request';
+import PastRequest from './PastRequest';
 
 const PastRequests = () => {
 
@@ -20,8 +20,8 @@ const PastRequests = () => {
   
   return (
     <div className='container'>
-        <h1>Pending Requests</h1>
-        <Request/>
+        <h1>Past Requests</h1>
+        <PastRequest/>
     </div>
   )
 }

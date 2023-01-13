@@ -13,7 +13,7 @@
       <div className="grid">
         <div className="section1_info section__margin pb-4">
           <div className="words gradient__text">
-            {" "}
+            
             <h3>Welcome</h3>
             <h3>to VJTI's</h3>
             <h3>Railway Ticket</h3>
@@ -22,8 +22,12 @@
           </div>
 
           <br />
-          <h4 className="future pt-2 gradient__text1"><a href="/login" className="loginn">Login</a> to access concession services.</h4>
-          <h4 className="future pt-2 gradient__text1">Don't have an account? <a href="/login" className="loginn">Click here to Signup</a></h4>
+          { user?.result ? (<></>):(
+            <>
+            <h4 className="future pt-2 gradient__text1"><a href="/login" className="loginn">Login</a> to access concession services.</h4>
+            <h4 className="future pt-2 gradient__text1">Don't have an account? <a href="/login" className="loginn">Click here to Signup</a></h4>
+          </>
+          )}
         </div>
 
         {/* <div className="caru">
