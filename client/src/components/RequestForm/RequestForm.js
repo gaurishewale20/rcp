@@ -12,7 +12,6 @@ const formReducer = (state, e) => {
       period: "",
       classs: "",
       StartDateCurr: "",
-      EndDateCurr: "",
       StartStationCurr: "",
       EndStationCurr: "",
     };
@@ -39,7 +38,7 @@ const RequestForm = () => {
   const [TicketNoErr, setTicketNoErr] = useState("");
   const [HistDateErr, setHistDateErr] = useState("");
 
-  formData.profile = JSON.parse(localStorage.getItem('profile'));
+  formData.profile = JSON.parse(localStorage.getItem("profile"));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -146,8 +145,8 @@ const RequestForm = () => {
           <label>
             <p>Period</p>
             <select
-              name="period"
-              value={formData.period || ""}
+              name="periodHist"
+              value={formData.periodHist || ""}
               onChange={handleChange}
             >
               <option value="">--Select--</option>
@@ -158,8 +157,8 @@ const RequestForm = () => {
           <label>
             <p>Class</p>
             <select
-              name="classs"
-              value={formData.classs || ""}
+              name="classsHist"
+              value={formData.classsHist || ""}
               onChange={handleChange}
             >
               <option value="">--Select--</option>
@@ -177,16 +176,6 @@ const RequestForm = () => {
               type="date"
               name="StartDateCurr"
               value={formData.StartDateCurr || ""}
-              onChange={handleChange}
-              required
-            ></input>
-          </label>
-          <label>
-            <p>Ending Date</p>
-            <input
-              type="date"
-              name="EndDateCurr"
-              value={formData.EndDateCurr || ""}
               onChange={handleChange}
               required
             ></input>
@@ -211,11 +200,36 @@ const RequestForm = () => {
               required
             ></input>
           </label>
+          <label>
+            <p>Period</p>
+            <select
+              name="periodCurr"
+              value={formData.periodCurr || ""}
+              onChange={handleChange}
+            >
+              <option value="">--Select--</option>
+              <option value="Monthly">Monthly</option>
+              <option value="Quarterly">Quarterly</option>
+            </select>
+          </label>
+          <label>
+            <p>Class</p>
+            <select
+              name="classsCurr"
+              value={formData.classsCurr || ""}
+              onChange={handleChange}
+            >
+              <option value="">--Select--</option>
+              <option value="First">First</option>
+              <option value="Second">Second</option>
+            </select>
+          </label>
         </fieldset>
-        <button type="submit" className="sub">Submit</button>
+        <button type="submit" className="sub">
+          Submit
+        </button>
       </form>
-      </div>
-    
+    </div>
   );
 };
 

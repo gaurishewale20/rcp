@@ -7,11 +7,11 @@ const historySchema = mongoose.Schema(
     EndDateHist: { type: Date, required: true },
     StartStationHist: { type: String, required: true },
     EndStationHist: { type: String, required: true },
-    period: {
+    periodHist: {
       type: String,
       enum: ["Monthly", "Quarterly"],
     },
-    classs: {
+    classsHist: {
       type: String,
       enum: ["First", "Second"],
     },

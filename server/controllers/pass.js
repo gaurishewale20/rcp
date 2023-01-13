@@ -1,5 +1,7 @@
 import Current from "../models/current.js";
 import History from "../models/history.js";
+import user from "../models/user.js";
+import User from "../models/user.js";
 
 export const addPass = async (req, res) => {
   const {
@@ -9,12 +11,17 @@ export const addPass = async (req, res) => {
     EndDateHist,
     StartStationHist,
     EndStationHist,
-    period,
-    classs,
+    periodHist,
+    classsHist,
   } = req.body;
 
-  const { StartDateCurr, EndDateCurr, StartStationCurr, EndStationCurr } =
-    req.body;
+  const {
+    StartDateCurr,
+    StartStationCurr,
+    EndStationCurr,
+    periodCurr,
+    classsCurr,
+  } = req.body;
 
   const histPass = new History({
     TicketNo,
@@ -22,86 +29,124 @@ export const addPass = async (req, res) => {
     EndDateHist,
     StartStationHist,
     EndStationHist,
-    period,
-    classs,
+    periodHist,
+    classsHist,
   });
 
   histPass.user = profile.result._id;
-  await histPass.save();
+  const histPassSaved = await histPass.save();
 
   const currPass = new Current({
     StartDateCurr,
-    EndDateCurr,
     StartStationCurr,
     EndStationCurr,
+    periodCurr,
+    classsCurr,
   });
 
   currPass.user = profile.result._id;
-  await currPass.save();
+  const currPassSaved = await currPass.save();
 
-  console.log("Saved Pass");
+  const user = await User.findById(profile.result._id);
+  user.currentPass = currPassSaved._id;
+  user.historyPass.push(histPassSaved._id);
+  await user.save();
 };
 
-
-export const getPendingRequests = async(req, res) => {
-
+export const getPendingRequests = async (req, res) => {
   try {
-
-      const total = await Current.countDocuments({});
-      // sorting because we want the posts from newest to oldest. -1 means sort in descending order
-      const requests = await Current.find().sort({ _id: -1 });
-      res.status(200).json({ data: requests});
+    const total = await Current.countDocuments({});
+    // sorting because we want the posts from newest to oldest. -1 means sort in descending order
+    const requests = await Current.find().sort({ _id: -1 });
+    res.status(200).json({ data: requests });
   } catch (error) {
-      res.status(404).json({ message: error.message });
+    res.status(404).json({ message: error.message });
   }
 };
 
-export const getPastRequests = async(req, res) => {
+export const getPastRequests = async (req, res) => {
   try {
-
-      const total = await History.countDocuments({});
-      // sorting because we want the posts from newest to oldest. -1 means sort in descending order
-      const requests = await History.find().sort({ _id: -1 });
-      res.status(200).json({ data: requests});
+    const total = await History.countDocuments({});
+    // sorting because we want the posts from newest to oldest. -1 means sort in descending order
+    const requests = await History.find().sort({ _id: -1 });
+    res.status(200).json({ data: requests });
   } catch (error) {
-      res.status(404).json({ message: error.message });
+    res.status(404).json({ message: error.message });
   }
 };
 
-export const approveRequest = async(req,res) =>{
-  try{
-      const { _id, status, StartDateCurr, EndDateCurr, StartStationCurr, EndStationCurr, user, createdAt, updatedAt} = req.body;
-      if (!mongoose.Types.ObjectId.isValid(_id))
+export const approveRequest = async (req, res) => {
+  try {
+    const {
+      _id,
+      status,
+      StartDateCurr,
+      EndDateCurr,
+      StartStationCurr,
+      EndStationCurr,
+      user,
+      createdAt,
+      updatedAt,
+    } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(_id))
       return res.status(404).send(`No post with id: ${_id}`);
 
-      let updatedRequest = {_id, StartDateCurr, EndDateCurr, StartStationCurr, EndStationCurr, user, createdAt, updatedAt, status: "approved" };
+    let updatedRequest = {
+      _id,
+      StartDateCurr,
+      EndDateCurr,
+      StartStationCurr,
+      EndStationCurr,
+      user,
+      createdAt,
+      updatedAt,
+      status: "approved",
+    };
 
-      updatedEvent = await Current.findByIdAndUpdate(_id, updatedRequest, {
-          new: true,
-      });
+    updatedEvent = await Current.findByIdAndUpdate(_id, updatedRequest, {
+      new: true,
+    });
 
-      res.json(updatedRequest);
-
-  }catch(error){
-    res.status(404).json({message: error.message});
+    res.json(updatedRequest);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
   }
 };
 
-export const denyRequest = async(req,res) =>{
-  try{
-    const { _id, status, StartDateCurr, EndDateCurr, StartStationCurr, EndStationCurr, user, createdAt, updatedAt} = req.body;
+export const denyRequest = async (req, res) => {
+  try {
+    const {
+      _id,
+      status,
+      StartDateCurr,
+      EndDateCurr,
+      StartStationCurr,
+      EndStationCurr,
+      user,
+      createdAt,
+      updatedAt,
+    } = req.body;
     if (!mongoose.Types.ObjectId.isValid(_id))
-        return res.status(404).send(`No post with id: ${_id}`);
+      return res.status(404).send(`No post with id: ${_id}`);
 
-    let updatedRequest = {_id, StartDateCurr, EndDateCurr, StartStationCurr, EndStationCurr, user, createdAt, updatedAt, status: "denied" };
+    let updatedRequest = {
+      _id,
+      StartDateCurr,
+      EndDateCurr,
+      StartStationCurr,
+      EndStationCurr,
+      user,
+      createdAt,
+      updatedAt,
+      status: "denied",
+    };
 
     updatedEvent = await EventsModel.findByIdAndUpdate(id, updatedEvent, {
-        new: true,
+      new: true,
     });
 
     res.json(updatedEvent);
-  }catch(error){
-    res.status(404).json({message: error.message});
+  } catch (error) {
+    res.status(404).json({ message: error.message });
   }
 };
-
