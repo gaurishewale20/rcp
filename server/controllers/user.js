@@ -62,12 +62,11 @@ export const signup = async (req, res) => {
 //@route           POST /api/users/
 //@access          Private
 
-// token + auth handling remaining in update profile
-
 export const updateProfile = async (req, res) => {
   try
   {
-    const user = await UserModal.findById(req.user._id);
+    const {id} = req.params;
+    const user = await UserModal.findById(id);
 
     if(user) 
     {
@@ -86,16 +85,16 @@ export const updateProfile = async (req, res) => {
       user.address = req.body.address || user.address;
       user.transportLine = req.body.transportLine || user.transportLine;
       user.regId = req.body.regId || user.regId;
-      user.year = req.body.year || user.year;
+      user.a_year = req.body.a_year || user.a_year;
       user.sem = req.body.sem || user.sem;
       user.program = req.body.program || user.program;
       user.department = req.body.department || user.department;
 
       const result = await user.save();
-      res.status(201).json({ result, token });
+      res.status(201).json({ result });
     }
     else{
-      res.status(400).json({message : "User not found"})
+      res.status(404).json({message : "User not found"})
     }  
   }catch (error) {
     res.status(500).json({ message: "Something went wrong" });

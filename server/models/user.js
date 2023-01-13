@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
   address : {type: String, required:  false},
   transportLine : { type : String, required:  false},
   regId :{ type : String, required:  false},
-  year : {type: Number, required:  false},
+  a_year : {type: Number, required:  false},
   sem : {type : Number, required:  false},
   program : {type: String, required:  false},
   department : {type : String, required:  false}
