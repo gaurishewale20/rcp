@@ -1,9 +1,7 @@
-import React,{useEffect, useState} from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
-import {Button, Table} from 'react-bootstrap';
+import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
 
-
-
+import './admindashboard.css';
 
 const AdminDashboard = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -18,9 +16,11 @@ const AdminDashboard = () => {
     ):(
         <div className='container'>
             <h2>Admin Page</h2>
-            <Link to="/pastrequests">Past Requests</Link>
-            <Link to="/pendingrequests">Pending Requests</Link>
-            <Link to="/studentsearch">Search via ID</Link>
+              <div className='options'>
+              <button type="button" className="info-btn"><Link to="/pastrequests">Past Requests</Link></button>
+              <button type="button" className="info-btn"><Link to="/pendingrequests">Pending Requests</Link></button>
+              <button type="button" className="info-btn"><Link to="/studentsearch">Search via ID</Link></button>
+              </div>
         </div>
     )
 
