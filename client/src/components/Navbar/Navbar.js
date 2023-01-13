@@ -70,7 +70,7 @@ const Navbarr = () => {
                 </Container>
 
             </Navbar>
-            { !user?.result ? (
+            { user?.result ? (
             <Navbar.Collapse id='responsive-navbar-nav' className="justify-content-end navv2">
               <Nav className="flexcont">
                 <Nav.Link eventKey="1"><Link activeClassname="active" to='/' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )} >Home</Link></Nav.Link>
