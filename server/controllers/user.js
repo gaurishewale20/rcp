@@ -3,14 +3,10 @@ import jwt from "jsonwebtoken";
 
 import UserModal from "../models/user.js";
 import { cloudinary } from "../config/cloudinaryConfig.js";
-import multer from "multer";
-import { storage } from "../config/cloudinaryConfig.js";
-const upload = multer({ storage });
-// const upload = multer({ dest: "uploads/" });
 const secret = "test";
 
 export const signin = async (req, res) => {
-  const { email, password, vjti_id, aadhar_card } = req.body;
+  const { email, password } = req.body;
 
   try {
     const oldUser = await UserModal.findOne({ email });
@@ -34,7 +30,12 @@ export const signin = async (req, res) => {
 };
 
 export const signup = async (req, res) => {
-  const { email, password, firstName, lastName } = req.body;
+  console.log("req files", req.files);
+  console.log("req file", req.file);
+  console.log("req body", req.body);
+
+  const { email, password, firstName, lastName, vjti_id, aadhar_card } =
+    req.body;
 
   try {
     const oldUser = await UserModal.findOne({ email });
@@ -50,10 +51,8 @@ export const signup = async (req, res) => {
     //   }
     // });
     cloudinary.v2.uploader
-      .upload(req.body.vjti_id)
+      .upload(vjti_id)
       .then((result) => console.log(result));
-
-    // upload.single("vjti_id");
 
     const result = await UserModal.create({
       email,
