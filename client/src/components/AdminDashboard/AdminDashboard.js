@@ -8,18 +8,18 @@ const AdminDashboard = () => {
 
   return (
     <>
-    {/* user?.result.email!="railwayconcessionstaff@vjti.ac.in" */}
-    {  1==0 ? (
+   
+    {   user?.result.email!="railwayconcessionstaff@vjti.ac.in" ? (
         <div className='container'>
-        <h2>Access Denied</h2>
+        <h2 className='pass_heading text-center new_heading'>Access Denied!</h2>
         </div>
     ):(
         <div className='container'>
-            <h2>Admin Page</h2>
+            <h3 className="pass_heading text-center pending_heading">Admin Page</h3>
               <div className='options'>
-              <button type="button" className="info-btn"><Link to="/pastrequests">Past Requests</Link></button>
-              <button type="button" className="info-btn"><Link to="/pendingrequests">Pending Requests</Link></button>
-              <button type="button" className="info-btn"><Link to="/studentsearch">Search via ID</Link></button>
+              <button type="button" className="sub"><Link to="/pastrequests">Past Requests</Link></button>
+              <button type="button" className="sub"><Link to="/pendingrequests">Pending Requests</Link></button>
+              <button type="button" className="sub"><Link to="/studentsearch">Search via ID</Link></button>
               </div>
         </div>
     )

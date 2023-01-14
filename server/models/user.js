@@ -31,6 +31,15 @@ const userSchema = mongoose.Schema({
       ref: "History",
     },
   ],
+
+
+  reset_password_token: {
+    type: String
+  },
+  reset_password_expires: {
+    type: Date
+  }
+
 });
 
 export default mongoose.model("User", userSchema);

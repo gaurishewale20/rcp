@@ -2,6 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Table, Button } from "react-bootstrap";
 import { approveRequest, denyRequest } from "../../actions/requests";
+import './Request.css';
+
+
 
 const Request = () => {
   const { requests, isLoading } = useSelector((state) => state.requests);
@@ -17,12 +20,19 @@ const Request = () => {
   }
 
   return (
-    <Table striped bordered hover>
+    <table>
       <>
+            <th>Status</th><th>User ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Start Station</th>
+            <th>End Station</th>
+
         {requests.map((request) => (
           <tr>
             {console.log(request)}
             <td>{request?.status}</td>
+            <td><a href={`/userprofile/${request?.user}`} target='_blank'>{request?.user}</a></td>
             <td>
               {new Date(request?.StartDateCurr)
                 .toString()
@@ -49,7 +59,7 @@ const Request = () => {
             </tr>
     ))}
     </>
-    </Table>
+    </table>
   );
 };
 

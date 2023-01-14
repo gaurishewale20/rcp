@@ -11,3 +11,7 @@ export const APPROVE = 'APPROVE';
 export const DENY = 'DENY';
 export const LOGOUT = 'LOGOUT';
 export const SEARCH_STUDENT = 'SEARCH_STUDENT';
+
+export const FORGOT = 'FORGOT';
+
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';

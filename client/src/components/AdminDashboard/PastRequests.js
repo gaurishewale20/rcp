@@ -17,7 +17,7 @@ const PastRequests = () => {
 
   return (
     <div className='container'>
-        <h1>Past Requests</h1>
+       <h3 className="pass_heading text-center pending_heading">Past Requests</h3>
         <PastRequest/>
     </div>
   );

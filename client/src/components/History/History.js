@@ -14,7 +14,7 @@ const History = () => {
         },
       }
     );
-    console.log(data);
+    //console.log(data);
     setUserData(data);
   };
 

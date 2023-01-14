@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import mongodb from "mongodb";
 const binary = mongodb.Binary;
-
+import mongoose from 'mongoose';
 import UserModal from "../models/user.js";
 
 const secret = "test";
@@ -108,7 +108,7 @@ export const updateProfile = async (req, res) => {
 
       //check pwd handling
       if (req.body.password) {
-        const hashedPassword = await bcrypt.hash(password, 12);
+        const hashedPassword = await bcrypt.hash(req.body.password, 12);
         user.password = hashedPassword;
       }
 
@@ -143,3 +143,10 @@ export const searchStudent = async (req, res) => {
   // console.log(data);
   res.status(200).json(data);
 };
+
+export const searchProfile = async(req,res) =>{
+  const { id } = req.params;
+  const data = await UserModal.find({"_id": mongoose.Types.ObjectId(id)});
+  console.log(data);
+  res.status(200).json(data);
+}

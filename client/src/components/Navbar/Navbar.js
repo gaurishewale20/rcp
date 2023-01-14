@@ -8,10 +8,8 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import * as actionType from '../../constants/actionTypes';
 import vjti_logo_white from "../../assets/images/vjti_logo_white.png";
 
-const Navbarr = () => {
 
-    const navItems = [ {  link: "/", name: "Home"},{ link: "/signup", name: "SignUp"},{ link: "/login", name: "Login"}];
-  
+const Navbarr = () => {
 
     const [scroll, setScroll] = useState(true);
     const [width, setWidth] = useState(window.innerWidth);
@@ -70,8 +68,10 @@ const Navbarr = () => {
                 </Container>
 
             </Navbar>
+
+
             { user?.result ? (
-            <Navbar.Collapse id='responsive-navbar-nav' className="justify-content-end navv2">
+            <Navbar className="justify-content-end navv2">
               <Nav className="flexcont">
                 <Nav.Link eventKey="1"><Link activeClassname="active" to='/' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )} >Home</Link></Nav.Link>
                 <Nav.Link eventKey="2"><Link activeClassName="active" to='/' className="nav-link nvlink" onClick={logout}>Logout</Link></Nav.Link>
@@ -79,14 +79,15 @@ const Navbarr = () => {
                 <Nav.Link eventKey="4"><Link activeClassName="active" to='/request' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Request</Link></Nav.Link>
                 <Nav.Link eventKey="5"><Link activeClassName="active" to='/profile' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Profile</Link></Nav.Link>
                 <Nav.Link eventKey="6"><Link activeClassName="active" to='/history' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>User Status</Link></Nav.Link>
+               { user?.result.email=="railwayconcessionstaff@vjti.ac.in" ? (<Nav.Link eventKey="7"><Link activeClassName="active" to='/admindashboard' className="nav-link nvlink" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth'})}>Admin Dashboard</Link></Nav.Link>):(null) }
               </Nav>
-            </Navbar.Collapse> ) :(
-               <Navbar.Collapse id='responsive-navbar-nav' className="justify-content-end navv2">
+            </Navbar> ):(
+               <Navbar className="justify-content-end navv2">
                <Nav className="flexcont">
                  <Nav.Link eventKey="1"><Link activeClassname="active" to='/' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )} >Home</Link></Nav.Link>
                  <Nav.Link eventKey="2"><Link activeClassName="active" to='/login' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Login</Link></Nav.Link>  
                </Nav>
-             </Navbar.Collapse>
+             </Navbar>
             ) }
 </>
     )
