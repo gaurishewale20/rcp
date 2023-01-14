@@ -108,7 +108,7 @@ export const updateProfile = async (req, res) => {
 
       //check pwd handling
       if (req.body.password) {
-        const hashedPassword = await bcrypt.hash(password, 12);
+        const hashedPassword = await bcrypt.hash(req.body.password, 12);
         user.password = hashedPassword;
       }
 

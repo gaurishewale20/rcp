@@ -22,3 +22,5 @@ export const denyRequest = (request) =>API.patch('/pass/deny', request);
 
 export const forgot = (formData) => API.post('/forgot/sendmail', formData);
 export const resetpw = (formData) => API.post('/forgot/reset_password', formData);
+
+export const updateProfile =(id, formData) => API.patch(`/user/${id}/updateProfile`,formData);
