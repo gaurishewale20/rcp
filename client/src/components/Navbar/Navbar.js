@@ -102,22 +102,18 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { Nav, Navbar} from 'react-bootstrap';
 import './Navbar.css';
 import {Button } from '@material-ui/core';
-
 import logo from '../../assets/images/logo.png';
 import * as actionType from '../../constants/actionTypes';
-
 const NavComponent = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
-
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
     history.push('/');
     setUser(null);
   };
-
   return (
     <>
       <Navbar collapseOnSelect fixed='top' expand='lg' className="navv" variant="light" >
@@ -135,14 +131,10 @@ const NavComponent = () => {
                 )}
               </Nav>
             </Navbar.Collapse>
-
         </div>
       </Navbar>
     </>
   );
-
 }
-
 export default NavComponent;
-
 */

@@ -8,12 +8,11 @@ const Request = () => {
   const { requests, isLoading }= useSelector((state) => state.requests);
   const dispatch = useDispatch();
 
-
+  if (!requests.length && !isLoading) return "No Past Requests";
   return (
     <Table striped bordered hover>
     <>
         {requests.map((request) => (
-
             <tr>
             {console.log(request)}
             <td>{request?.status}</td>
