@@ -137,7 +137,7 @@ export const updateProfile = async (req, res) => {
 };
 
 export const searchStudent = async (req, res) => {
-  console.log(req.body.ID);
-  const data = await UserModal.find({ regId: req.body.ID });
-  console.log(data);
+  const data = await UserModal.find({ regId: req.query.id });
+  // console.log(data);
+  res.status(200).json(data);
 };
