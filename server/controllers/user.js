@@ -137,16 +137,26 @@ export const updateProfile = async (req, res) => {
 };
 
 export const searchStudent = async (req, res) => {
+  try{
   const data = await UserModal.find({ regId: req.query.id }).populate(
     "currentPass"
   );
   // console.log(data);
   res.status(200).json(data);
+  }catch (error) {
+    res.status(500).json({ message: "Something went wrong" });
+    console.log(error);
+  }
 };
 
 export const searchProfile = async(req,res) =>{
+  try{
   const { id } = req.params;
   const data = await UserModal.find({"_id": mongoose.Types.ObjectId(id)});
   console.log(data);
   res.status(200).json(data);
+  }catch (error) {
+    res.status(500).json({ message: "Something went wrong" });
+    console.log(error);
+  }
 }
