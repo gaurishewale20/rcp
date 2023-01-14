@@ -8,10 +8,10 @@ const AdminDashboard = () => {
 
   return (
     <>
-    {/* user?.result.email!="railwayconcessionstaff@vjti.ac.in" */}
-    {  1==0 ? (
+   
+    {   user?.result.email!="railwayconcessionstaff@vjti.ac.in" ? (
         <div className='container'>
-        <h2>Access Denied</h2>
+        <h2 className='pass_heading text-center new_heading'>Access Denied!</h2>
         </div>
     ):(
         <div className='container'>

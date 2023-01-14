@@ -11,9 +11,6 @@ import vjti_logo_white from "../../assets/images/vjti_logo_white.png";
 
 const Navbarr = () => {
 
-    const navItems = [ {  link: "/", name: "Home"},{ link: "/signup", name: "SignUp"},{ link: "/login", name: "Login"}];
-  
-
     const [scroll, setScroll] = useState(true);
     const [width, setWidth] = useState(window.innerWidth);
     //   const scrollCheck = window.pageYOffset > 400;
@@ -71,6 +68,8 @@ const Navbarr = () => {
                 </Container>
 
             </Navbar>
+
+
             { user?.result ? (
             <Navbar className="justify-content-end navv2">
               <Nav className="flexcont">
@@ -80,8 +79,9 @@ const Navbarr = () => {
                 <Nav.Link eventKey="4"><Link activeClassName="active" to='/request' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Request</Link></Nav.Link>
                 <Nav.Link eventKey="5"><Link activeClassName="active" to='/profile' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Profile</Link></Nav.Link>
                 <Nav.Link eventKey="6"><Link activeClassName="active" to='/history' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>User History</Link></Nav.Link>
+               { user?.result.email=="railwayconcessionstaff@vjti.ac.in" ? (<Nav.Link eventKey="7"><Link activeClassName="active" to='/admindashboard' className="nav-link nvlink" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth'})}>Admin Dashboard</Link></Nav.Link>):(null) }
               </Nav>
-            </Navbar> ) :(
+            </Navbar> ):(
                <Navbar className="justify-content-end navv2">
                <Nav className="flexcont">
                  <Nav.Link eventKey="1"><Link activeClassname="active" to='/' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )} >Home</Link></Nav.Link>
