@@ -22,6 +22,9 @@ const LazyHome = lazy(() => import('./components/Home/Home'));
 const LazyAuth = lazy(() => import('./components/Auth/Auth'));  // SignIn-SignUp page
 const LazyAdminDashboard = lazy(()=> import('./components/AdminDashboard/AdminDashboard'));
 
+const Forgot = lazy(() => import('./components/Forgot/Forgot'));
+const ResetPW = lazy(() => import('./components/ResetPW/ResetPW'));
+
 const App =()=> {
 
   const history = createBrowserHistory();
@@ -43,6 +46,10 @@ const App =()=> {
           <Route path="/pendingrequests" exact component={PendingRequests}/>
           <Route path="/studentsearch" exact component={SearchStudent}/>
           <Route path="/information" exact component={Info}/>
+
+          <Route path="/forgot" exact component={Forgot}/>
+          <Route path="/forgot/reset_password" exact component={ResetPW}/>
+
           <Route component={Error404}/>
       </Switch>
       </Suspense>
