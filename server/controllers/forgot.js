@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
-// const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
 
 
 
