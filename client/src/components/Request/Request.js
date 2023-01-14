@@ -10,11 +10,11 @@ const Request = () => {
   if (!requests.length && !isLoading) return "No Requests";
   const approve = (request) => {
     dispatch(approveRequest(request));
-  };
+  }
 
   const deny = (request) => {
     dispatch(denyRequest(request));
-  };
+  }
 
   return (
     <Table striped bordered hover>
@@ -41,27 +41,14 @@ const Request = () => {
             <td>{request?.EndStationCurr}</td>
             <td>{request?.period}</td>
             <td>{request?.class}</td>
-            <td>
-              <Button
-                size="small"
-                color="secondary"
-                onClick={() => approve(request)}
-              >
-                Approve
-              </Button>
-            </td>
-            <td>
-              <Button
-                size="small"
-                color="secondary"
-                onClick={() => deny(request)}
-              >
-                Deny
-              </Button>
-            </td>
-          </tr>
-        ))}
-      </>
+            <td> <button type="submit" className="sub" onClick={()=>approve(request)}>Approve</button></td>
+            <td> <button type="submit" className="sub" onClick={()=>deny(request)}>Deny</button></td>
+            {/* <td><Button size="small" color="secondary" onClick={()=>approve(request)}>Approve</Button></td> */}
+            {/* <td><Button size="small" color="secondary" onClick={()=>deny(request)}>Deny</Button></td> */}
+        
+            </tr>
+    ))}
+    </>
     </Table>
   );
 };

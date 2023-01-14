@@ -17,5 +17,5 @@ export const signUp = (formData) => API.post('/user/signup', formData);
 export const searchStudent = (ID) => API.post('/user/searchStudent',{'ID':ID});
 export const fetchPendingRequests = () => API.get('/pass/pending');
 export const fetchPastRequests = () => API.get('/pass/past');
-export const approveRequest = (request) => API.patch('/pass/approve');
-export const denyRequest = (request) =>API.patch('/pass/deny');
+export const approveRequest = (request) => API.patch('/pass/approve', request);
+export const denyRequest = (request) =>API.patch('/pass/deny', request);

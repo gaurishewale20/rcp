@@ -116,6 +116,7 @@ const SignUp = () => {
               <Input
                 name="dob"
                 label="Date Of Birth"
+                type="date"
                 handleChange={handleChange}
               />
             )}

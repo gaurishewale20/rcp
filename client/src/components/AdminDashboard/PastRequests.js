@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
-import { Button, Table } from "react-bootstrap";
+import { useHistory} from "react-router-dom";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { getRequests } from "../../actions/requests";
-import Request from "../Request/Request";
+import PastRequest from './PastRequest';
 
 const PastRequests = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
@@ -17,9 +16,9 @@ const PastRequests = () => {
   }, [dispatch]);
 
   return (
-    <div className="container">
-      <h1>Pending Requests</h1>
-      <Request />
+    <div className='container'>
+        <h1>Past Requests</h1>
+        <PastRequest/>
     </div>
   );
 };

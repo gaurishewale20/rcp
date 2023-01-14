@@ -26,4 +26,4 @@ const PastRequests = () => {
   )
 }
 
-export default PastRequests
+export default PastRequests;

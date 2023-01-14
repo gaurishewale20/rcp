@@ -29,28 +29,25 @@ export const getRequests = (type) => async (dispatch) => {
 };
 
 export const approveRequest = (request) => async (dispatch) => {
+    console.log(request);
   try {
     const { data } = await api.approveRequest(request);
-    dispatch({ type: APPROVE, payload: request._id });
+    console.log(request);
+    dispatch({ type: APPROVE, payload: request });
   } catch (error) {
     console.log(error);
   }
 };
 
 export const denyRequest = (request) => async (dispatch) => {
+    console.log(request);
   try {
     const { data } = await api.denyRequest(request);
-    dispatch({ type: DENY });
+    console.log(request);
+    dispatch({ type: DENY, payload: request });
   } catch (error) {
     console.log(error);
   }
 };
 
-export const searchStudent = (ID) => async (dispatch) => {
-  try {
-    const { data } = await api.searchStudent(ID);
-    dispatch({ type: SEARCH_STUDENT });
-  } catch (error) {
-    console.log(error);
-  }
-};
+ export const searchStudent=()=>{};
