@@ -17,8 +17,6 @@ import PastRequests from './components/AdminDashboard/PastRequests';
 import PendingRequests from './components/AdminDashboard/PendingRequests';
 import SearchStudent from './components/AdminDashboard/SearchStudent';
 import Info from './components/Info/Info';
-import Profile from './components/Profile/Profile';
-
 
 import Profile from './components/UserProfile/Profile';
 import UpdateProfile from './components/UserProfile/UpdateProfile';
