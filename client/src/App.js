@@ -17,6 +17,7 @@ import PastRequests from './components/AdminDashboard/PastRequests';
 import PendingRequests from './components/AdminDashboard/PendingRequests';
 import SearchStudent from './components/AdminDashboard/SearchStudent';
 import Info from './components/Info/Info';
+import Profile from './components/Profile/Profile';
 
 const LazyHome = lazy(() => import('./components/Home/Home'));
 const LazyAuth = lazy(() => import('./components/Auth/Auth'));  // SignIn-SignUp page
@@ -46,7 +47,7 @@ const App =()=> {
           <Route path="/pendingrequests" exact component={PendingRequests}/>
           <Route path="/studentsearch" exact component={SearchStudent}/>
           <Route path="/information" exact component={Info}/>
-
+          <Route path="/userprofile/:id" exact component={Profile}/>
           <Route path="/forgot" exact component={Forgot}/>
           <Route path="/forgot/reset_password" exact component={ResetPW}/>
 

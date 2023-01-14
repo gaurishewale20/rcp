@@ -22,7 +22,7 @@ const Request = () => {
   return (
     <table>
       <>
-            <th>Status</th>
+            <th>Status</th><th>User ID</th>
             <th>Start Date</th>
             <th>End Date</th>
             <th>Start Station</th>
@@ -32,6 +32,7 @@ const Request = () => {
           <tr>
             {console.log(request)}
             <td>{request?.status}</td>
+            <td><a href={`/userprofile/${request?.user}`} target='_blank'>{request?.user}</a></td>
             <td>
               {new Date(request?.StartDateCurr)
                 .toString()
