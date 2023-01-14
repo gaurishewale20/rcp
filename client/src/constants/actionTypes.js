@@ -10,3 +10,5 @@ export const END_LOADING = 'END_LOADING';
 export const APPROVE = 'APPROVE';
 export const DENY = 'DENY';
 export const LOGOUT = 'LOGOUT';
+
+export const UPDATE_PROFILE = 'UPDATE_PROFILE'

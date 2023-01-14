@@ -9,6 +9,6 @@ router.post("/signup", signup);
 
 router.patch("/:id/updateProfile", auth, updateProfile);
 
-router.get("/test", (req, res) => res.send("Route testing done!"));
+//router.get("/test", (req, res) => res.send("Route testing done!"));
 
 export default router;

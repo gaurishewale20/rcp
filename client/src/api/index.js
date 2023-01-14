@@ -1,4 +1,5 @@
 import axios from "axios";
+import { alignPropType } from "react-bootstrap/esm/types";
 
 const API = axios.create({ baseURL: "http://localhost:5000" });
 
@@ -21,3 +22,4 @@ export const fetchPendingRequests = () => API.get('/pass/pending');
 export const fetchPastRequests = () => API.get('/pass/past');
 export const approveRequest = (request) => API.patch('/pass/approve');
 export const denyRequest = (request) =>API.patch('/pass/deny');
+export const updateProfile =(id, formData) => API.patch(`/user/${id}/updateProfile`,formData);
