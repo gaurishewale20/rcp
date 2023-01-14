@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import {Table} from 'react-bootstrap';
+//import {Table} from 'react-bootstrap';
 import {approveRequest, denyRequest} from '../../actions/requests';
+import "../Request/Request.css";
 
 
 const Request = () => {
@@ -10,7 +11,14 @@ const Request = () => {
 
   if (!requests.length && !isLoading) return "No Past Requests";
   return (
-    <Table striped bordered hover>
+    <table>
+        <th>Status</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Start Station</th>
+            <th>End Station</th>
+            <th>Period</th>
+            <th>Class</th>
     <>
         {requests.map((request) => (
             <tr>
@@ -25,7 +33,7 @@ const Request = () => {
             </tr>
     ))}
     </>
-    </Table>
+    </table>
   )
 }
 

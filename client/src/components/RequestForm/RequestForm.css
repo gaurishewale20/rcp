@@ -1,5 +1,5 @@
 .pass_container{
-    min-height: 150vh;
+    min-height: 170vh;
     
 }
 
@@ -14,6 +14,7 @@
     font-weight: 300;
     color:var(--color-navbar);
     padding-top: 1em;
+    font-size: 1.5em;
     
 }
 

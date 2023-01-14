@@ -88,7 +88,7 @@ const RequestForm = () => {
       </div> */}
       <h1 className="concession_heading text-center">Concession Form</h1>
       <form onSubmit={handleSubmit}>
-        <h2 className="pass_heading">Previous Pass Details</h2>
+        <h4 className="pass_heading">Previous Pass Details</h4>
         <fieldset>
           <label>
             <p>Ticket No.</p>
@@ -165,7 +165,7 @@ const RequestForm = () => {
           </label>
         </fieldset>
 
-        <h2 className="pass_heading">Current Pass Details</h2>
+        <h4 className="pass_heading">Current Pass Details</h4>
         <fieldset>
           <label>
             <p>Starting Date</p>
