@@ -6,6 +6,7 @@ import {
   DENY,
   SEARCH_STUDENT,
 } from "../constants/actionTypes";
+
 import * as api from "../api/index.js";
 
 export const getRequests = (type) => async (dispatch) => {
