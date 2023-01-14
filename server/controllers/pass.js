@@ -58,23 +58,18 @@ export const getPendingRequests = async (req, res) => {
   try {
     const total = await Current.countDocuments({});
     // sorting because we want the posts from newest to oldest. -1 means sort in descending order
-
-    const requests = await Current.find({status:"Pending"}).sort({ _id: -1 });
-    res.status(200).json({ data: requests  });
-
-  } catch (error) {
+    const requests = await Current.find().sort({ _id: -1 });
+    res.status(200).json({ data: requests });  } catch (error) {
     res.status(404).json({ message: error.message });
   }
 };
 
 export const getPastRequests = async (req, res) => {
   try {
-
     const total = await Current.countDocuments({});
     // sorting because we want the posts from newest to oldest. -1 means sort in descending order
     const requests = await Current.find({status:{$in:["Approved", "Denied", "approved","denied"]}}).sort({ _id: -1 });
     res.status(200).json({ data: requests  });
-
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
