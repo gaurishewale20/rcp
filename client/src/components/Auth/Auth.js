@@ -9,7 +9,7 @@ import {
   Container,
   Box,
 } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link  } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 import Icon from "./icon";
@@ -217,6 +217,12 @@ const SignUp = () => {
                   ? "Already have an account? Sign in"
                   : "Don't have an account? Sign Up"}
               </Button>
+
+              {!isSignup &&
+              <Link className={classes.forgot} textAlign="center" to="/forgot" fullWidth>
+                Forgot Password? Click here
+              </Link>
+              }
             </Grid>
           </Grid>
         </form>
