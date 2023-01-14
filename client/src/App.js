@@ -18,6 +18,10 @@ import PendingRequests from './components/AdminDashboard/PendingRequests';
 import SearchStudent from './components/AdminDashboard/SearchStudent';
 import Info from './components/Info/Info';
 
+
+import Profile from './components/UserProfile/Profile';
+import UpdateProfile from './components/UserProfile/UpdateProfile';
+
 const LazyHome = lazy(() => import('./components/Home/Home'));
 const LazyAuth = lazy(() => import('./components/Auth/Auth'));  // SignIn-SignUp page
 const LazyAdminDashboard = lazy(()=> import('./components/AdminDashboard/AdminDashboard'));
@@ -49,6 +53,9 @@ const App =()=> {
 
           <Route path="/forgot" exact component={Forgot}/>
           <Route path="/forgot/reset_password" exact component={ResetPW}/>
+
+          <Route path="/profile" exact component={Profile}/>
+          <Route path="/updateprofile" exact component={UpdateProfile}/>
 
           <Route component={Error404}/>
       </Switch>
