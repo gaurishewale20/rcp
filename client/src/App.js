@@ -17,6 +17,8 @@ import PastRequests from './components/AdminDashboard/PastRequests';
 import PendingRequests from './components/AdminDashboard/PendingRequests';
 import SearchStudent from './components/AdminDashboard/SearchStudent';
 import Info from './components/Info/Info';
+import UserProfile from './components/Profile/Profile';
+
 
 import Profile from './components/UserProfile/Profile';
 import UpdateProfile from './components/UserProfile/UpdateProfile';
@@ -49,7 +51,7 @@ const App =()=> {
           <Route path="/pendingrequests" exact component={PendingRequests}/>
           <Route path="/studentsearch" exact component={SearchStudent}/>
           <Route path="/information" exact component={Info}/>
-          <Route path="/userprofile/:id" exact component={Profile}/>
+          <Route path="/userprofile/:id" exact component={UserProfile}/>
           <Route path="/forgot" exact component={Forgot}/>
           <Route path="/forgot/reset_password" exact component={ResetPW}/>
 
