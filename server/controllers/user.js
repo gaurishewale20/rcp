@@ -137,7 +137,9 @@ export const updateProfile = async (req, res) => {
 };
 
 export const searchStudent = async (req, res) => {
-  const data = await UserModal.find({ regId: req.query.id });
+  const data = await UserModal.find({ regId: req.query.id }).populate(
+    "currentPass"
+  );
   // console.log(data);
   res.status(200).json(data);
 };

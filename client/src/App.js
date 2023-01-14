@@ -8,7 +8,7 @@ import NavComponent from './components/Navbar/Navbar';
 import Loader from './components/Loader/Loader';
 import Footer from './components/Footer/Footer';
 import RequestForm from './components/RequestForm/RequestForm';
-
+import History from './components/History/History';
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import ScrollToBottom from './components/ScrollToBottom/ScrollToBottom';
@@ -43,6 +43,7 @@ const App =()=> {
           <Route path="/pendingrequests" exact component={PendingRequests}/>
           <Route path="/studentsearch" exact component={SearchStudent}/>
           <Route path="/information" exact component={Info}/>
+          <Route path="/history" exact component={History}/>
           <Route component={Error404}/>
       </Switch>
       </Suspense>

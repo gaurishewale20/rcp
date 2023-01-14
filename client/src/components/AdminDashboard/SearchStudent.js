@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
-import { useDispatch, useSelector } from "react-redux";
-import { searchStudent } from "../../actions/requests";
 import axios from "axios";
 
 const SearchStudent = () => {
@@ -21,7 +19,7 @@ const SearchStudent = () => {
     // console.log(data);
     setUserData(data);
   };
-  console.log(userData);
+  // console.log(userData);
   const submitID = (e) => {
     e.preventDefault();
     // dispatch(searchStudent(search));

@@ -78,7 +78,7 @@ const Navbarr = () => {
                 <Nav.Link eventKey="3"><Link activeClassName="active" to='/information' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Info</Link></Nav.Link>
                 <Nav.Link eventKey="4"><Link activeClassName="active" to='/request' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Request</Link></Nav.Link>
                 <Nav.Link eventKey="5"><Link activeClassName="active" to='/profile' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>Profile</Link></Nav.Link>
-                <Nav.Link eventKey="6"><Link activeClassName="active" to='/history' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>User History</Link></Nav.Link>
+                <Nav.Link eventKey="6"><Link activeClassName="active" to='/history' className="nav-link nvlink" onClick={() => window.scrollTo( { top: 0, behavior: 'smooth' } )}>User Status</Link></Nav.Link>
               </Nav>
             </Navbar.Collapse> ) :(
                <Navbar.Collapse id='responsive-navbar-nav' className="justify-content-end navv2">

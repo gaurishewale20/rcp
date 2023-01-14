@@ -48,24 +48,19 @@ const RequestForm = () => {
   };
 
   const handleChange = (e) => {
+
     setFormData({
       name: e.target.name,
       value: e.target.value,
     });
     const { name, value } = e.target;
+    const StartDateHist = '';
+    const EndDateHist = '';
 
     switch (name) {
       case "TicketNo":
         setTicketNoErr(
           value.length === 4 ? "" : "Ticket No should be exactly 4 digits"
-        );
-        break;
-
-      case "EndDateHist":
-        setHistDateErr(
-          formData.StartDateHist < formData.EndDateHist
-            ? ""
-            : "Start date cannot be greater than end date!"
         );
         break;
 
@@ -136,7 +131,6 @@ const RequestForm = () => {
               name="EndStationHist"
               value={formData.EndStationHist || ""}
               onChange={handleChange}
-              
             ></input>
           </label>
           <label>
