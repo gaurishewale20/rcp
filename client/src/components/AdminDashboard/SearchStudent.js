@@ -44,16 +44,16 @@ const SearchStudent = () => {
       </div>
       {userData?(
         <>
-            <h3>{userData[0].name}</h3>
-            <h3>{userData[0].address}</h3>
-            <h3>{userData[0].department}</h3>
-            <h3>{userData[0].email}</h3>
-            <h3>{userData[0].gender}</h3>
-            <h3>{userData[0].phoneNo}</h3>
-            <h3>{userData[0].program}</h3>
-            <h3>{userData[0].regId}</h3>
-            <h3>{userData[0].sem}</h3>
-            <h3>{userData[0].transportLine}</h3>
+            <h3>Name : {userData[0].name}</h3>
+            <h3>Address : {userData[0].address}</h3>
+            <h3>Department : {userData[0].department}</h3>
+            <h3>Email : {userData[0].email}</h3>
+            <h3>Gender : {userData[0].gender}</h3>
+            <h3>Phone No. : {userData[0].phoneNo}</h3>
+            <h3>Program : {userData[0].program}</h3>
+            <h3>Registration ID : {userData[0].regId}</h3>
+            <h3>Semester : {userData[0].sem}</h3>
+            <h3>Transport Line : {userData[0].transportLine}</h3>
         </>
       ):("")}
     </div>
