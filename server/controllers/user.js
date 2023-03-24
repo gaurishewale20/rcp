@@ -107,10 +107,10 @@ export const updateProfile = async (req, res) => {
       user.email = req.body.email || user.email;
 
       //check pwd handling
-      if (req.body.password) {
-        const hashedPassword = await bcrypt.hash(req.body.password, 12);
-        user.password = hashedPassword;
-      }
+      // if (req.body.password) {
+      //   const hashedPassword = await bcrypt.hash(req.body.password, 12);
+      //   user.password = hashedPassword;
+      // }
 
       user.phoneNo = req.body.phoneNo || user.phoneNo;
       user.gender = req.body.gender || user.gender;
